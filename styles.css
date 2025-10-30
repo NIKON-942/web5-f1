@@ -61,7 +61,7 @@ body {
     padding: 0;
 }
 
-#block2 li {
+#block2 ul li {
     list-style: none;
     text-align: center;
 }

@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (targetBlock && items.length > 0) {
                     const list = document.createElement('ol');
+                    list.classList.add('customList');
                     items.forEach(text => {
                         const li = document.createElement('li');
                         li.textContent = text;
@@ -134,10 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            let list = targetBlock.querySelector('ol');
+            let list = targetBlock.querySelector('ol.customList');
             
             if (!list) {
                 list = document.createElement('ol');
+                list.classList.add('customList');
                 formContainer.after(list);
             }
 
@@ -151,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         saveButton.addEventListener('click', () => {
             const items = [];
-            const listItems = targetBlock.querySelectorAll('ol li');
+            const listItems = targetBlock.querySelectorAll('ol.customList li');
             
             listItems.forEach(li => {
                 items.push(li.textContent);
